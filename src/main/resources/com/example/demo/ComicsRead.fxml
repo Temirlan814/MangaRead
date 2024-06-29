@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ComicsController">
+    <BorderPane fx:id="ComicsDescription" prefHeight="700.0" prefWidth="1200.0">
+        <top>
+            <HBox maxHeight="51.2" maxWidth="Infinity" prefWidth="22.0" style="-fx-background-color: orange; -fx-padding: 10;">
+                <Button onAction="#returnCatalog" style="-fx-font-size: 20;-fx-background-color: orange; -fx-text-fill: white;-fx-font-weight: bold" text="Каталог" />
+            </HBox>
+        </top>
+        <center>
+            <ScrollPane fitToHeight="true" fitToWidth="true">
+                <HBox>
+                    <VBox alignment="TOP_CENTER" minWidth="210.0" prefHeight="634.0">
+                          <ImageView fx:id="ComicsImange" fitHeight="160" fitWidth="210" pickOnBounds="true" style="-fx-background-radius: 15; -fx-border-radius: 15;">
+                          </ImageView>
+                        <Region minHeight="30.0" prefHeight="30.0" prefWidth="210.0" />
+                        <VBox fx:id="ComicsInfo" maxHeight="Infinity" maxWidth="Infinity" prefHeight="682.0" prefWidth="210.0" style="-fx-background-color: White; -fx-background-radius: 15; -fx-border-radius: 15;" HBox.hgrow="ALWAYS">
+                            <VBox>
+                                <Label style="-fx-text-fill: DimGray" text="Тип">
+                                    <padding>
+                                       <Insets left="10.0" top="10.0" />
+                                    </padding>
+                            <font>
+                               <Font size="15.0" />
+                            </font>
+                                </Label>
+                                <Label fx:id="ComicsType" style="-fx-text-fill: Black; -fx-font-size: 20px">
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                            </VBox>
+                            <VBox>
+                                <Label style="-fx-text-fill: DimGray" text="Автор">
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                            <font>
+                               <Font size="15.0" />
+                            </font>
+                                </Label>
+                                <Label fx:id="ComicsAuthor" style="-fx-text-fill: Black; -fx-font-size: 20px">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                            </VBox>
+                            <VBox>
+                                <Label style="-fx-text-fill: DimGray" text="Художник">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                            <font>
+                               <Font size="15.0" />
+                            </font>
+                                </Label>
+                                <Label fx:id="ComicsArtist" style="-fx-text-fill: Black; -fx-font-size: 20px">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                            </VBox>
+                            <VBox>
+                                <Label style="-fx-text-fill: DimGray" text="Релиз">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                            <font>
+                               <Font size="15.0" />
+                            </font>
+                                </Label>
+                                <Label fx:id="ReleaseData" style="-fx-text-fill: Black; -fx-font-size: 20px">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                            </VBox>
+                        </VBox>
+                    </VBox>
+                    <Region minHeight="0.0" minWidth="100.0">
+                       <HBox.margin>
+                          <Insets />
+                       </HBox.margin>
+                    </Region>
+                    <VBox fx:id="ComicsRead" prefHeight="647.0" HBox.hgrow="ALWAYS">
+                        <Label fx:id="ComicsName" style="-fx-text-fill: Black; -fx-font-size: 30px; -fx-font-weight: bold" />
+                        <Region prefHeight="20" />
+                        <VBox prefHeight="627.0" style="-fx-background-color: White; -fx-background-radius: 15; -fx-border-radius: 15;" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                            <VBox>
+                                <HBox>
+                                    <Button alignment="BOTTOM_RIGHT" onAction="#AnimationLeft" prefHeight="32.0" prefWidth="107.0" style="-fx-background-color: white;" text="Информация" />
+                                    <Button alignment="BOTTOM_CENTER" onAction="#AnimationRight" prefHeight="32.0" prefWidth="107.0" style="-fx-background-color: white;" text="Главы" />
+                                </HBox>
+                                <Line fx:id="Anime" endX="107.0" stroke="Orange">
+                                    <VBox.margin>
+                                       <Insets left="5.0" />
+                                    </VBox.margin>
+                                </Line>
+                            </VBox>
+                            <StackPane VBox.vgrow="ALWAYS">
+                                <VBox fx:id="ComicsInformation" VBox.vgrow="ALWAYS">
+                                    <Label fx:id="Description" style="-fx-font-size: 14px" wrapText="true" HBox.hgrow="ALWAYS">
+                                        <padding>
+                                            <Insets left="10" right="10" top="10" />
+                                        </padding>
+                                    </Label>
+                                    <GridPane fx:id="GenreComics">
+                                    </GridPane>
+                                </VBox>
+                                <VBox fx:id="ComicsChapterblock" visible="false" HBox.hgrow="ALWAYS">
+                                    <VBox fx:id="ComicsChapters" HBox.hgrow="ALWAYS">
+                                    </VBox>
+                                </VBox>
+                            </StackPane>
+                        </VBox>
+                    </VBox>
+                </HBox>
+            </ScrollPane>
+        </center>
+    </BorderPane>
+    <ScrollPane fx:id="ReadComics" fitToHeight="true" fitToWidth="true" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #272727" visible="false">
+        <HBox prefWidth="140" spacing="10" style="-fx-background-color: #272727">
+            <!-- Центральный HBox для размещения элементов по центру -->
+            <HBox prefHeight="686.0" prefWidth="140.0" HBox.hgrow="ALWAYS">
+                <VBox alignment="BOTTOM_LEFT" prefHeight="699.0" prefWidth="140.0">
+                    <StackPane fx:id="PageChapter" style="-fx-background-radius: 10; -fx-border-radius: 10" visible="false">
+                        <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-radius: 10; -fx-border-radius: 10">
+                            <VBox fx:id="pageButtonsContainer" style="-fx-background-radius: 10; -fx-border-radius: 10">
+                            </VBox>
+                        </ScrollPane>
+                    </StackPane>
+                    <Button fx:id="toggleButton" onAction="#ChangePageChapter" prefHeight="26.0" prefWidth="131.0" style="-fx-text-fill: orange;-fx-background-color: Black; -fx-font-weight: Bold; -fx-background-radius: 10; -fx-border-radius: 10">
+                    </Button>
+                </VBox>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" minWidth="970.0" spacing="10" style="-fx-background-color: #272727">
+                <Button onAction="#showPreviousImage" prefHeight="60.0" prefWidth="120.0" style="-fx-text-fill: orange;-fx-background-color: Black; -fx-font-weight: Bold; -fx-background-radius: 10; -fx-border-radius: 10" text="Назад" />
+                <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: #272727;">
+                    <ListView fx:id="Comics" prefWidth="700.0" style="-fx-background-color: #272727;"
+                              minHeight="0" maxHeight="Infinity" VBox.vgrow="ALWAYS">
+                    </ListView>
+                </ScrollPane>
+                <Button onAction="#showNextImage" prefHeight="60.0" prefWidth="120.0" style="-fx-text-fill: orange;-fx-background-color: Black; -fx-font-weight: Bold; -fx-background-radius: 10; -fx-border-radius: 10" text="Вперед" />
+            </HBox>
+
+            <!-- HBox для кнопки "X" -->
+            <HBox alignment="TOP_RIGHT" prefWidth="140.0" HBox.hgrow="ALWAYS">
+                <VBox alignment="TOP_RIGHT">
+                    <Button onAction="#CloseComics" prefHeight="33.0" prefWidth="37.0" style="-fx-font-weight:bold;-fx-background-color: orange" text="X">
+                    </Button>
+                    <padding>
+                        <Insets right="15" top="15.0" />
+                    </padding>
+                </VBox>
+            </HBox>
+        </HBox>
+    </ScrollPane>
+</StackPane>

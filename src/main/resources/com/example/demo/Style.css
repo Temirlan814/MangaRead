@@ -1,0 +1,22 @@
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: grey;
+    -fx-border-radius: 3px;
+}
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+.check-box:selected .box {
+    -fx-background-color: #7c73e6;
+}
+.text-field {
+    -fx-border-color: gray;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;/* Цвет границы по умолчанию */
+}
+.text-field:focused {
+    -fx-border-color:  #7c73e6;
+    -fx-background-color: white;; /* Цвет границы при фокусировке */
+    -fx-focus-color: transparent; /* Отключаем эффект фокусации по умолчанию */
+
+}

@@ -1,0 +1,36 @@
+/* Стили для ScrollPane */
+.my-list-view .scroll-pane {
+    /* Цвет фона ScrollPane */
+    -fx-background-color: #f0f0f0; /* Замените на желаемый цвет */
+    -fx-background: #f0f0f0; /* Цвет фона, применяемый к внутреннему содержимому */
+}
+
+/* Стили для горизонтальной полосы прокрутки */
+.my-list-view .scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: transparent; /* Фоновый цвет горизонтальной полосы прокрутки */
+}
+
+.my-list-view .scroll-pane .scroll-bar:horizontal .thumb {
+    /* Цвет и стиль горизонтального ползунка */
+    -fx-background-color: #888888; /* Цвет ползунка */
+}
+
+.my-list-view .scroll-pane .scroll-bar:horizontal .track {
+    /* Цвет трека горизонтальной полосы прокрутки */
+    -fx-background-color: #d3d3d3; /* Замените на желаемый цвет */
+}
+
+/* Стили для вертикальной полосы прокрутки */
+.my-list-view .scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent; /* Фоновый цвет вертикальной полосы прокрутки */
+}
+
+.my-list-view .scroll-pane .scroll-bar:vertical .thumb {
+    /* Цвет и стиль вертикального ползунка */
+    -fx-background-color: #6B6B6B; /* Цвет ползунка */
+}
+
+.my-list-view .scroll-pane .scroll-bar:vertical .track {
+    /* Цвет трека вертикальной полосы прокрутки */
+    -fx-background-color: #424242; /* Замените на желаемый цвет */
+}

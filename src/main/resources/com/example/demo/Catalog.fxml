@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.CatalogController">
+
+    <top>
+        <StackPane fx:id="Catalog">
+            <HBox maxWidth="Infinity" style="-fx-background-color: orange; -fx-padding: 10;">
+                <Label style="-fx-font-size: 20; -fx-text-fill: white;-fx-font-weight: bold" text="Каталог" />
+            </HBox>
+            <Label fx:id="errorLabel" prefHeight="31.0" prefWidth="232.0" style="-fx-background-color: Pink; -fx-text-fill: #FF0000; padding: 10px; -fx-border-radius: 10px; -fx-background-radius: 10px" text="Поле года выпуска должно быть числом" translateY="-50.0" />
+        </StackPane>
+    </top>
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true">
+            <VBox alignment="TOP_CENTER" layoutY="50.0" maxWidth="700.0" prefWidth="700.0" spacing="10" style="-fx-border-radius: 10px; -fx-background-radius: 10px; -fx-border-width: 1px; -fx-background-color: white;">
+                <Label style="-fx-font-weight: bold; -fx-font-size: 15" text="Поиск" />
+                <TextField fx:id="TextSearch" maxWidth="700.0" style="-fx-background-color: white; -fx-border-color: #888888; -fx-background-radius: 5; -fx-border-radius: 5;">
+                    <VBox.margin>
+                        <Insets left="10.0" right="10" />
+                    </VBox.margin>
+                </TextField>
+                <GridPane fx:id="gridPane">
+                </GridPane>
+            </VBox>
+        </ScrollPane>
+    </center>
+    <right>
+        <VBox prefHeight="700">
+            <StackPane>
+                <VBox fx:id="Settings" alignment="TOP_CENTER" prefHeight="939.0" prefWidth="408.0" spacing="10" style="-fx-border-radius: 10px; -fx-background-radius: 10px; -fx-border-width: 1px; -fx-background-color: white;" VBox.vgrow="ALWAYS">
+                    <Button fx:id="Genres" alignment="CENTER" maxHeight="40" maxWidth="394.0" onAction="#ShowGenres" prefHeight="36.0" prefWidth="394.0" style="-fx-background-color: white">
+                        <graphic>
+                            <HBox spacing="10">
+                                <!-- Первая часть текста выровнена по левому краю -->
+                                <Text style="-fx-font-weight: bold" text="Жанры" wrappingWidth="335.931640625" />
+                                <!-- Вторая часть текста выровнена по правому краю -->
+                                <Text style="-fx-fill: grey ;" text="&gt;" />
+                            </HBox>
+                        </graphic>
+                    </Button>
+                    <Label prefHeight="18.0" prefWidth="377.0" style="-fx-font-weight: bold" text="Год выпуска" />
+                    <HBox>
+                        <Region prefWidth="20" />
+                        <TextField fx:id="DataSearhFrom" prefHeight="26.0" prefWidth="172.0" promptText="От" style="-fx-background-color: white; -fx-border-color: #888888; -fx-background-radius: 5; -fx-border-radius: 5;" />
+                        <Text text=" — " />
+                        <TextField fx:id="DataSearhTO" prefHeight="26.0" prefWidth="172.0" promptText="До" style="-fx-background-color: white; -fx-border-color: #888888; -fx-background-radius: 5; -fx-border-radius: 5;" />
+                    </HBox>
+                    <Label prefHeight="18.0" prefWidth="377.0" style="-fx-font-weight: bold" text="Тип" />
+                    <GridPane fx:id="MangaType" prefHeight="58.0" prefWidth="408.0">
+                    </GridPane>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+                </VBox>
+                <VBox fx:id="vBox_genres" style="-fx-background-color: white; -fx-opacity: 0.8;" visible="false">
+                    <Button fx:id="Genres_back" onAction="#ShowGenresBack" prefHeight="26.0" prefWidth="341.0" style="-fx-background-color: white">
+                        <graphic>
+                            <HBox spacing="10">
+                                <!-- Первая часть текста выровнена по левому краю -->
+                                <Text style="-fx-fill: grey ;" text="&lt;" wrappingWidth="298.931640625" />
+                                <!-- Вторая часть текста выровнена по правому краю -->
+                                <Text style="-fx-font-weight: bold" text="Назад Жанры" />
+                            </HBox>
+                        </graphic>
+                    </Button>
+                    <ListView fx:id="listView">
+                    <!-- Конфигурация вашего ListView -->
+                    </ListView>
+                </VBox>
+            </StackPane>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="300">
+                <Button fx:id="Resets" alignment="BOTTOM_CENTER" onAction="#ResetAll" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: white; -fx-text-fill: #696969; -fx-font-weight: bold; -fx-font-size: 14px;" text="Сбросить" VBox.vgrow="ALWAYS" />
+                <Region prefWidth="20" />
+                <Button fx:id="GenresButton" alignment="BOTTOM_CENTER" onAction="#AllSetting" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #00FF00; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;" text="Выбрать" VBox.vgrow="ALWAYS" />
+            </HBox>
+        </VBox>
+    </right>
+</BorderPane>

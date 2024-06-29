@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<VBox alignment="CENTER" prefHeight="477.0" prefWidth="697.0" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LoginController">
+    <HBox alignment="CENTER" prefHeight="66.0" prefWidth="600.0" spacing="10">
+        <Label style="-fx-font-size: 20px;" text="Авторизация" />
+    </HBox>
+    <VBox alignment="TOP_CENTER" maxHeight="244.0" maxWidth="342.0" prefHeight="244.0" prefWidth="342.0" spacing="10" style="-fx-border-radius: 10px; -fx-background-radius: 10px; -fx-border-width: 1px; -fx-background-color: white;">
+        <HBox>
+            <VBox>
+                <Button fx:id="login" onAction="#changeRegister" prefHeight="22.0" prefWidth="88.0" style="-fx-font-size: 10px; -fx-background-color: white" text="Вход" />
+                <Line fx:id="line1" endX="88.0" stroke="#7c73e6"/>
+            </VBox>
+            <VBox>
+                <Button fx:id="registration" onAction="#changelogin" prefHeight="22.0" prefWidth="88.0" style="-fx-font-size: 10px; -fx-background-color: white" text="Регистрация" />
+                <Line fx:id="line2" endX="88.0" stroke="#7c73e6" visible="false"/>
+            </VBox>
+        </HBox>
+        <Line endX="300.0"/>
+        <StackPane alignment="TOP_CENTER">
+            <VBox fx:id="loginBox" alignment="TOP_CENTER">
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="100.0" spacing="10">
+                    <TextField fx:id="usernameField" prefHeight="37.0" prefWidth="260.0" promptText="Логин" style="-fx-font-size: 16px;" />
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="100.0" spacing="10">
+                    <StackPane prefHeight="50.0" prefWidth="234.0">
+                        <TextField fx:id="visiblePasswordField" prefHeight="38.0" prefWidth="140.0" promptText="Пароль" style="-fx-font-size: 16px;" visible="false" />
+                        <PasswordField fx:id="passwordField" prefHeight="38.0" prefWidth="140.0" promptText="Пароль" style="-fx-font-size: 16px;" />
+                    </StackPane>
+                    <HBox alignment="CENTER" spacing="10">
+                        <CheckBox onAction="#togglePasswordVisibility"  />
+                    </HBox>
+                </HBox>
+                <Label fx:id="errorMessageLabel" textFill="red" />
+                <Button contentDisplay="CENTER" onAction="#login" prefHeight="20.0" prefWidth="264.0" style="-fx-background-color: #7c73e6; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;" text="Войти" />
+            </VBox>
+
+            <VBox fx:id="registrationBox" alignment="TOP_CENTER" visible="false">
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="100.0" spacing="10">
+                    <TextField fx:id="newusernameField" prefHeight="37.0" prefWidth="260.0" promptText="Придумайте Логин" style="-fx-font-size: 16px;" />
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="100.0" spacing="10">
+                    <StackPane prefHeight="50.0" prefWidth="234.0">
+                        <TextField fx:id="newvisiblePasswordField" prefHeight="38.0" prefWidth="140.0" promptText="Придумайте Пароль"  styleClass="text-field" style="-fx-font-size: 16px;" visible="false" />
+                        <PasswordField fx:id="newpasswordField" prefHeight="38.0" prefWidth="140.0" promptText="Придумайте Пароль" style="-fx-font-size: 16px;" />
+                    </StackPane>
+                    <HBox alignment="CENTER" spacing="10">
+                        <CheckBox onAction="#newtogglePasswordVisibility" />
+                    </HBox>
+                </HBox>
+                <Label fx:id="newerrorMessageLabel" textFill="red"/>
+                <Button contentDisplay="CENTER" onAction="#registration" prefHeight="20.0" prefWidth="264.0" style="-fx-background-color: #7c73e6; ; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;" text="Регистрация" />
+            </VBox>
+        </StackPane>
+    </VBox>
+</VBox>
