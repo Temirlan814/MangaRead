@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class DatabaseController {
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/lab_pg";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "1";
+    private static final String URL = "you have to know";
+    private static final String USER = "you have to know";
+    private static final String PASSWORD = "you have to know";
     // login
     public static boolean addCredentials(String login, String password) {
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
